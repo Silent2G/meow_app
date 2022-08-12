@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/cupertino.dart';
 import 'package:meow_app/pages/cat/cat_page_cubit.dart';
 
