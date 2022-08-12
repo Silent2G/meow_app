@@ -4,9 +4,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
+import 'package:meow_app/pages/cat/components/image_holder.dart';
 
 import '../../components/color_button.dart';
-import '../../constants.dart';
+
 import '../cats_history.dart/cats_history_cubit.dart';
 import '../cats_history.dart/cats_history_page.dart';
 import 'cat_page_cubit.dart';
@@ -51,21 +52,7 @@ class CatPage extends StatelessWidget {
           children: [
             Column(
               children: [
-                SizedBox(
-                  key: UniqueKey(),
-                  height: 350,
-                  child: state is CatPageReadyState
-                      ? Image.network(
-                          key: UniqueKey(),
-                          Constants.catImagePath,
-                          fit: BoxFit.cover,
-                        )
-                      : SizedBox(
-                          height: 350,
-                          width: MediaQuery.of(context).size.width,
-                          child: const CupertinoActivityIndicator(),
-                        ),
-                ),
+                ImageHolder(state: state),
                 if (state is CatPageReadyState)
                   Padding(
                     padding:
