@@ -90,7 +90,10 @@ class CatPage extends StatelessWidget {
                   padding: const EdgeInsets.only(bottom: 50),
                   child: ColorButton(
                     title: "Another fact!",
-                    function: cubit.getRandomFact,
+                    function: () {
+                      cubit.getRandomFact();
+                      imageCache.clear();
+                    },
                     color: Colors.blue,
                   ),
                 ))

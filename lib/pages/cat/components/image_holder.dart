@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/cupertino.dart';
 import 'package:meow_app/pages/cat/cat_page_cubit.dart';
 
@@ -24,7 +26,7 @@ class ImageHolder extends StatelessWidget {
             width: MediaQuery.of(context).size.width,
             child: Image.network(
               fit: BoxFit.contain,
-              "https://cataas.com/cat?v=${DateTime.now().millisecondsSinceEpoch}",
+              "https://cataas.com/cat",
             ),
           ),
       ],
